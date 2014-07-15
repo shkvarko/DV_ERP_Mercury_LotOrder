@@ -1628,9 +1628,9 @@ namespace ERPMercuryLotOrder
                 cboxKLPState.SelectedItem = (m_objSelectedKLP.CurrentKLPState == null) ? null : cboxKLPState.Properties.Items.Cast<ERP_Mercury.Common.CKLPState>().Single<ERP_Mercury.Common.CKLPState>(x => x.ID.CompareTo(m_objSelectedKLP.CurrentKLPState.ID) == 0);
 
                 cboxProductTradeMark.Properties.Items.Add(new ERP_Mercury.Common.CProductTradeMark() { ID = System.Guid.Empty, Name = "" });
-                cboxProductTradeMark.Properties.Items.AddRange(ERP_Mercury.Common.CProductTradeMark.GetProductTradeMarkList(m_objProfile, null));
+                cboxProductTradeMark.Properties.Items.AddRange(ERP_Mercury.Common.CProductTradeMark.GetProductTradeMarkListForLotOrder(m_objProfile, null, m_objLotOrder.ID));
                 cboxProductType.Properties.Items.Add(new ERP_Mercury.Common.CProductType() { ID = System.Guid.Empty, Name = "" });
-                cboxProductType.Properties.Items.AddRange(ERP_Mercury.Common.CProductType.GetProductTypeList(m_objProfile, null));
+                cboxProductType.Properties.Items.AddRange(ERP_Mercury.Common.CProductType.GetProductTypeListForLotOrder(m_objProfile, null, m_objLotOrder.ID));
 
                 LoadKLPItemsListToDataSet();
 
@@ -1715,9 +1715,9 @@ namespace ERPMercuryLotOrder
                 cboxKLPState.SelectedItem = (cboxKLPState.Properties.Items.Count == 0) ? null : cboxKLPState.Properties.Items[0];
 
                 cboxProductTradeMark.Properties.Items.Add(new ERP_Mercury.Common.CProductTradeMark() { ID = System.Guid.Empty, Name = "" });
-                cboxProductTradeMark.Properties.Items.AddRange(ERP_Mercury.Common.CProductTradeMark.GetProductTradeMarkList(m_objProfile, null));
+                cboxProductTradeMark.Properties.Items.AddRange(ERP_Mercury.Common.CProductTradeMark.GetProductTradeMarkListForLotOrder(m_objProfile, null, m_objLotOrder.ID));
                 cboxProductType.Properties.Items.Add(new ERP_Mercury.Common.CProductType() { ID = System.Guid.Empty, Name = "" });
-                cboxProductType.Properties.Items.AddRange(ERP_Mercury.Common.CProductType.GetProductTypeList(m_objProfile, null));
+                cboxProductType.Properties.Items.AddRange(ERP_Mercury.Common.CProductType.GetProductTypeListForLotOrder(m_objProfile, null, m_objLotOrder.ID));
 
                 btnEdit.Enabled = false;
                 btnCancel.Enabled = true;
